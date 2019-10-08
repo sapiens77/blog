@@ -59,7 +59,7 @@ export const login = async ctx => {
       ctx.status = 401;
       return;
     }
-    console.log(user.serialize());
+    //console.log(user.serialize());
     ctx.body = user.serialize();
   } catch (e) {
     ctx.throw(500, e);
