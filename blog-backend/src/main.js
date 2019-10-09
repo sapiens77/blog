@@ -7,6 +7,7 @@ import mongoose from 'mongoose';
 
 import api from './api';
 //import createFakeData from './createFakeData';
+import jwtMiddleware from './lib/jwtMiddleware';
 
 const { PORT, MONGO_URI } = process.env;
 
@@ -28,6 +29,7 @@ router.use('/api', api.routes()); // api 라우트 적용
 
 //라우터 적용 전에 bodyParser적용
 app.use(bodyParser());
+app.use(jwtMiddleware);
 
 // router.get('/', ctx => {
 //   ctx.body = '홈';
